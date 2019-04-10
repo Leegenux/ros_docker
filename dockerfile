@@ -12,6 +12,7 @@ RUN export uid=1000 gid=1000 && \
     chmod 0440 /etc/sudoers.d/developer && \
     chown ${uid}:${gid} -R /home/developer
 
+# Set default shell as "fish"
 RUN echo "set-option -g default-shell /usr/local/bin/fish" >> /etc/tmux.conf
 
 USER developer
