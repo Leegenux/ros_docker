@@ -1,6 +1,6 @@
 FROM ros:kinetic-robot 
 
-RUN apt update && apt install -y sudo tmux vim fish
+RUN apt update && apt upgrade -y && apt install -y sudo tmux vim fish ros-kinetic-ros-tutorials
 
 # Replace 1000 with your user / group id
 RUN export uid=1000 gid=1000 && \
