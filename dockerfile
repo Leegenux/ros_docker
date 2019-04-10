@@ -1,6 +1,13 @@
 FROM ros:kinetic-robot 
 
+# Basic setup
 RUN apt update && apt upgrade -y && apt install -y sudo tmux vim fish ros-kinetic-ros-tutorials
+
+# Sound system
+RUN apt install -y alsa-utils alsa-firmware-loaders alsa-oss alsa-base # alsa-lib apulse
+# RUN amixer sset Master unmute && \
+# 	amixer sset Speaker unmute && \
+# 	amixer sset Headphone unmute
 
 # Replace 1000 with your user / group id
 RUN export uid=1000 gid=1000 && \
